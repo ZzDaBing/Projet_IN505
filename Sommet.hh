@@ -5,6 +5,10 @@ private:
 	char lettre;
 	int occurence;
 public:
+	Sommet(){
+		this->lettre='0';
+		this->occurence=0;
+	}
 	Sommet(char l, int o){
 		this->lettre=l;
 		this->occurence=o;

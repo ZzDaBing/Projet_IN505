@@ -3,36 +3,30 @@
 
 class ArbreB : public Sommet{
 private:
-	int cle;
 	ArbreB* fg;
 	ArbreB* fd;
 public:
-	ArbreB(char l, int o) : Sommet(l,o){
-		this->cle=-1;
+	ArbreB() : Sommet(){
 		this->fg=NULL;
 		this->fd=NULL;
 	}
 	
-	ArbreB(char l, int o, int cle) : Sommet(l,o){
-		this->cle=cle;
+	ArbreB(char l, int o) : Sommet(l,o){
 		this->fg=NULL;
 		this->fd=NULL;
 	}
 	
 	ArbreB(char l, int o, ArbreB f) : Sommet(l,o){
-		this->cle=-1;
 		this->fg=&f;
 		this->fd=NULL;
 	}
 	
-	ArbreB(char l, int o, ArbreB fg, ArbreB fd) : Sommet(l,o){
-		this->cle=-1;
+	ArbreB(ArbreB fg, ArbreB fd) : Sommet(){
 		this->fg=&fg;
 		this->fd=&fd;
 	}
 	
-	ArbreB(char l, int o, int cle, ArbreB fg, ArbreB fd) : Sommet(l,o){
-		this->cle=cle;
+	ArbreB(char l, int o, ArbreB fg, ArbreB fd) : Sommet(l,o){
 		this->fg=&fg;
 		this->fd=&fd;
 	}
