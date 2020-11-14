@@ -33,16 +33,34 @@ public:
 	
 	~ArbreB(){}
 	
-	bool rechercheElem(char l){
+	ArbreB* getfg(){return this->fg;}
+	ArbreB* getfd(){return this->fd;}
+	
+	//fonction de recherche renvoyant un boolean
+	bool rechElem(char l){
 		if(this->getLettre()==l)
 			return true;
+		if(fg and fd)
+			return fg->rechElem(l) + fd->rechElem(l);
+		if(fg){
+			return fg->rechElem(l);
+		}
+		if(fd){
+			return fd->rechElem(l);
+		}
+		return false;
+	}
+	
+	//fonction de recherche en void
+	void rechercheElem(char l){
+		if(this->getLettre()==l)
+			std::cout << "Element trouvé: " << l << std::endl;
 		if(fg){
 			fg->rechercheElem(l);
 		}
 		if(fd){
 			fd->rechercheElem(l);
 		}
-		return false;
 	}
 	
 	
