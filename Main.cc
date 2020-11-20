@@ -1,8 +1,14 @@
 #include <iostream>
+
+#include <QtGui/QApplication>
+#include <QtGui/QPainter>
+#include <QtGui/QWidget>
+
 #include "ArbreB.hh"
 #include "Sommet.hh"
+#include "Fenetre.hh"
 
-int main(){
+int main(int argc,char** argv){
 	
 	const char * d = "droite";
 	const char * g = "gauche";
@@ -35,5 +41,10 @@ int main(){
 	ArbreCA.rechAllElem(0,"ArbreCA",-1); 
 	std::cout << std::endl;
 
-	return 0;
+	//Partie Qt
+	QApplication app(argc,argv);
+	Fenetre window(&ArbreCA);
+	window.show();
+	
+	return app.exec();
 }

@@ -81,7 +81,7 @@ public:
 	}
 
 	
-	//fonction de recherche d'un caractère dans un arbre, elle renvoie un boolean,
+	//fonction de recherche d'un caractère dans un arbre, elle renvoie un boolean
 	bool rechElem(char l){
 		if(this->getLettre()==l){
 			std::cout << "Element trouvé: " << l << std::endl;
@@ -98,7 +98,7 @@ public:
 		return false;
 	}
 	
-	//fonction de recherche d'un caractère dans un arbre, elle renvoie un rien
+	//fonction de recherche d'un caractère dans un arbre, elle ne renvoie rien
 	void rechercheElem(char l){
 		if(this->getLettre()==l){
 			std::cout << "Element trouvé: " << l << "son occurence est de: " << this->getOccurence() << std::endl;
