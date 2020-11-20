@@ -1,5 +1,6 @@
 #pragma once
 #include "Sommet.hh"
+#include <cstring>
 
 class ArbreB : public Sommet{
 private:
@@ -15,37 +16,32 @@ public:
 		this->fg=NULL;
 		this->fd=NULL;
 	}
-	
-	// ArbreB(char l, int o, ArbreB f) : Sommet(l,o){
-	// 	this->fg=&f;
-	// 	this->fd=NULL;
-	// }
 
-	ArbreB(int a ,  ArbreB f) : Sommet(){
-		if (a){
-			this->fd=&f;
-			this->fg=NULL;
-		}
-		else {
-			this->fg=&f;
-			this->fd=NULL;
-		}
-	}
-
-	ArbreB(char l, int o, int a ,  ArbreB f) : Sommet(l,o){
-		if (a){
-			this->fd=&f;
-			this->fg=NULL;
-		}
-		else {
-			this->fg=&f;
-			this->fd=NULL;
-		}
-	}
-	
 	ArbreB(ArbreB fg, ArbreB fd) : Sommet(){
 		this->fg=&fg;
 		this->fd=&fd;
+	}
+
+	ArbreB(const char * direction ,  ArbreB f) : Sommet(){
+		if (std::strcmp(direction, "droite")==0){
+			this->fd=&f;
+			this->fg=NULL;
+		}
+		else {
+			this->fg=&f;
+			this->fd=NULL;
+		}
+	}
+
+	ArbreB(char l, int o, const char * direction ,  ArbreB f) : Sommet(l,o){
+		if (std::strcmp(direction, "droite")==0){
+			this->fd=&f;
+			this->fg=NULL;
+		}
+		else {
+			this->fg=&f;
+			this->fd=NULL;
+		}
 	}
 	
 	ArbreB(char l, int o, ArbreB fg, ArbreB fd) : Sommet(l,o){
@@ -58,7 +54,7 @@ public:
 	ArbreB* getfg(){return this->fg;}
 	ArbreB* getfd(){return this->fd;}
 
-	//fonction qui renvoie toute les lettres et occurences par profondeur
+	//fonction qui renvoie toute les lettres et occurences par profondeur et si elle se situe a gauche ou a droite
 
 	int rechAllElem(int prof, char const * nomArbre, int gORd){
 
@@ -85,10 +81,12 @@ public:
 	}
 
 	
-	//fonction de recherche renvoyant un boolean
+	//fonction de recherche d'un caractère dans un arbre, elle renvoie un boolean,
 	bool rechElem(char l){
-		if(this->getLettre()==l)
+		if(this->getLettre()==l){
+			std::cout << "Element trouvé: " << l << std::endl;
 			return true;
+		}
 		if(fg and fd)
 			return fg->rechElem(l) + fd->rechElem(l);
 		if(fg){
@@ -100,10 +98,11 @@ public:
 		return false;
 	}
 	
-	//fonction de recherche en void
+	//fonction de recherche d'un caractère dans un arbre, elle renvoie un rien
 	void rechercheElem(char l){
-		if(this->getLettre()==l)
-			std::cout << "Element trouvé: " << l << std::endl;
+		if(this->getLettre()==l){
+			std::cout << "Element trouvé: " << l << "son occurence est de: " << this->getOccurence() << std::endl;
+		}
 		if(fg){
 			fg->rechercheElem(l);
 		}

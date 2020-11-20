@@ -4,75 +4,36 @@
 
 int main(){
 	
-	ArbreB A('a', 3);
-	ArbreB b('b', 2);
-	ArbreB c('c', 5,A,b);
-	ArbreB Ab(A, b);
-	ArbreB Ac(1, b);
-	ArbreB ABC(Ab,c);
-	ArbreB ABAB(Ab,ABC);
+	const char * d = "droite";
+	const char * g = "gauche";
 
-	c.getfg()->setLettre('H');
-	c.getfg()->setOccurence(7);
-	c.getfd()->setLettre('B');
-	c.getfd()->setOccurence(9);
+	ArbreB a ('a',3); 						// création d'un sommet seul avec la lettre "a" et l'occurence "3"
+	ArbreB b ; 								// création d'un sommet vide 0,0
+	ArbreB c ('c',4); 						// création d'un sommet seul avec la lettre "c" et l'occurence "4"
 
-	// c.rechAllElem(0,"c",-1);
-	// b.rechAllElem(0,"b",-1);
-	// A.rechAllElem(0,"A",-1);
-	Ac.rechAllElem(0,"Ac",-1);
-	
-	// std::cout << A.getLettre() << " " << A.getOccurence() << " " << std::endl;
-	// Ab.rechAllElem(0,"Ab",-1);
-	// std::cout << std::endl;
+	ArbreB ArbreCA (a,c); 					// crearion d'un arbre ArbreB ArbreCA  avec les deux sommet a et c qui aura pour sommet vide
+	ArbreB ArbreVideCA( 'd',5,g,ArbreCA ); 	// creation d'un arbre avec un  sommet avec la lettre d et une occurence de 5 a partir d'un autre arbre qu'on positionne dans la branche gauche 
 
-	// Ab.rechAllElem(0,"Ab",-1);
-	// std::cout << std::endl;
+	ArbreVideCA.rechAllElem(0,"ArbreVideCA",-1); // recherche de tout les elements contenue dans l'arbre ArbreVideCA
+	std::cout << std::endl;
 
-	// Ab.getfg()->setLettre('H');
-	// Ab.getfg()->setOccurence(7);
+	ArbreCA.setLettre('f');					//change la lettre du sommet de l'arbre ArbreVideCA
+	ArbreCA.setOccurence(9); 				//change l'occurence du sommet de l'arbre ArbreVideCA
 
+	ArbreVideCA.getfg();					//permet de pointer vers le noeud qui se situe a gauche
+	ArbreCA.getfd();						//permet de pointer vers le noeud qui se situe a droite
 
-	// Ab.rechAllElem(0,"Ab",-1);
-	// std::cout << std::endl;
-	// std::cout << Ab.getLettre() << " " << Ab.getOccurence() << " " << std::endl;
-	//ArbreB Ab(A, b);
-		
-	//en void
-	// Ab.rechercheElem('H');
-	// Ab.rechercheElem('b');
-	// Ab.rechercheElem('a');
+	ArbreVideCA.getfg()->setOccurence(9); 	//change l'occurence du noeud de droite de l'arbre ArbreVideCA
+	ArbreVideCA.getfg()->setLettre('b');	//change la lettre du noeud de droite de l'arbre ArbreVideCA
 
-	//rechercher tout les elements dans l'arbre 
+	ArbreVideCA.rechAllElem(0,"ArbreVideCA",-1);
+	std::cout << std::endl;
 
-	// A.rechAllElem(0,"A",-1);
-	// std::cout << std::endl;
-	// b.rechAllElem(0,"B",-1);
-	// std::cout << std::endl;
-	// c.rechAllElem(0,"C",-1);
-	// std::cout << std::endl;
-	// Ab.rechAllElem(0,"Ab",-1);
-	// std::cout << std::endl;
-	// ABC.rechAllElem(0,"ABC",-1);
-	// std::cout << std::endl;
-	// ABAB.rechAllElem(0,"ABAB",-1);
-	// std::cout << std::endl;
+	ArbreCA.getfd()->setLettre('q');		//change la lettre du noeud de gauche de l'arbre ArbreB ArbreCA 
+	ArbreCA.getfd()->setOccurence(15); 		//change l'occurence du noeud de a gauche de l'arbre ArbreB ArbreCA 
 
+	ArbreCA.rechAllElem(0,"ArbreCA",-1); 
+	std::cout << std::endl;
 
-	
-	//en booleen
-	// if(ABC.rechElem('H'))
-	// 	std::cout << "Element H trouvé " << std::endl;
-	// if(ABC.rechElem('b'))
-	// 	std::cout << "Element b trouvé " << std::endl;
-	// if(ABC.rechElem('a'))
-	// 	std::cout << "Element a trouvé " << std::endl;
-	// if(ABC.rechElem('c'))
-	// 	std::cout << "Element c trouvé " << std::endl;
-
-	// std::cout << ABC.getLettre() <<std::endl;
-
-
-	
 	return 0;
 }
