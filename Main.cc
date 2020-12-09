@@ -4,7 +4,7 @@
 #include <QtGui/QPainter>
 #include <QtGui/QWidget>
 
-#include "ArbreB.hh"
+#include "ArbreB.h"
 <<<<<<< HEAD
 =======
 #include "Sommet.h"
