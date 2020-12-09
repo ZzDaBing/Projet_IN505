@@ -5,8 +5,11 @@
 #include <QtGui/QWidget>
 
 #include "ArbreB.hh"
+<<<<<<< HEAD
+=======
 #include "Sommet.hh"
 #include "Fenetre.hh"
+>>>>>>> 4f72827facd12b10ee3f2767d0c2416d76976485
 
 int main(int argc,char** argv){
 	
@@ -18,22 +21,22 @@ int main(int argc,char** argv){
 	ArbreB c ('c',4); 						// création d'un sommet seul avec la lettre "c" et l'occurence "4"
 
 	ArbreB ArbreCA (a,c); 					// crearion d'un arbre ArbreB ArbreCA  avec les deux sommet a et c qui aura pour sommet vide
-	ArbreB ArbreVideCA( 'd',5,g,ArbreCA ); 	// creation d'un arbre avec un  sommet avec la lettre d et une occurence de 5 a partir d'un autre arbre qu'on positionne dans la branche gauche 
+	//ArbreB ArbreVideCA( 'd',5,g,ArbreCA ); 	// creation d'un arbre avec un  sommet avec la lettre d et une occurence de 5 a partir d'un autre arbre qu'on positionne dans la branche gauche 
 
-	ArbreVideCA.rechAllElem(0,"ArbreVideCA",-1); // recherche de tout les elements contenue dans l'arbre ArbreVideCA
-	std::cout << std::endl;
+	//ArbreVideCA.rechAllElem(0,"ArbreVideCA",-1); // recherche de tout les elements contenue dans l'arbre ArbreVideCA
+	//std::cout << std::endl;
 
 	ArbreCA.setLettre('f');					//change la lettre du sommet de l'arbre ArbreVideCA
 	ArbreCA.setOccurence(9); 				//change l'occurence du sommet de l'arbre ArbreVideCA
 
-	ArbreVideCA.getfg();					//permet de pointer vers le noeud qui se situe a gauche
-	ArbreCA.getfd();						//permet de pointer vers le noeud qui se situe a droite
+	//ArbreVideCA.getfg();					//permet de pointer vers le noeud qui se situe a gauche
+	//ArbreCA.getfd();						//permet de pointer vers le noeud qui se situe a droite
 
-	ArbreVideCA.getfg()->setOccurence(9); 	//change l'occurence du noeud de droite de l'arbre ArbreVideCA
-	ArbreVideCA.getfg()->setLettre('b');	//change la lettre du noeud de droite de l'arbre ArbreVideCA
+	//ArbreVideCA.getfg()->setOccurence(9); 	//change l'occurence du noeud de droite de l'arbre ArbreVideCA
+	//ArbreVideCA.getfg()->setLettre('b');	//change la lettre du noeud de droite de l'arbre ArbreVideCA
 
-	ArbreVideCA.rechAllElem(0,"ArbreVideCA",-1);
-	std::cout << std::endl;
+	//ArbreVideCA.rechAllElem(0,"ArbreVideCA",-1);
+	//std::cout << std::endl;
 
 	ArbreCA.getfd()->setLettre('q');		//change la lettre du noeud de gauche de l'arbre ArbreB ArbreCA 
 	ArbreCA.getfd()->setOccurence(15); 		//change l'occurence du noeud de a gauche de l'arbre ArbreB ArbreCA 
