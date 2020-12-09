@@ -7,7 +7,7 @@
 #include "ArbreB.hh"
 <<<<<<< HEAD
 =======
-#include "Sommet.hh"
+#include "Sommet.h"
 #include "Fenetre.hh"
 >>>>>>> 4f72827facd12b10ee3f2767d0c2416d76976485
 

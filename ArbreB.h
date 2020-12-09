@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Sommet.hh"
+#include "Sommet.h"
+#include <iostream>
 #include <cstring>
 
 class ArbreB : public Sommet{
@@ -23,7 +24,7 @@ public:
 	ArbreB* getfd();
 	int rechAllElem(int prof, char const * nomArbre, int gORd);
 	bool rechElem(char l);
-	bool rechercheElem(char l);
+	void rechercheElem(char l);
 	//deleteArbre();
 
 

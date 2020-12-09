@@ -1,4 +1,4 @@
-#include "ArbreB.hh"
+#include "ArbreB.h"
 
 ArbreB::ArbreB() : Sommet(){
 	this->fg=nullptr;
