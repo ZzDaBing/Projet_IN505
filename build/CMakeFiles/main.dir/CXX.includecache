@@ -6,11 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/user/langage_avance/Projet_IN505/ArbreB.hh
-Sommet.hh
-/home/user/langage_avance/Projet_IN505/Sommet.hh
+/home/user/langage_avance/Projet_IN505/ArbreB.cc
+ArbreB.h
+/home/user/langage_avance/Projet_IN505/ArbreB.h
+
+/home/user/langage_avance/Projet_IN505/ArbreB.h
+Sommet.h
+/home/user/langage_avance/Projet_IN505/Sommet.h
+iostream
+-
 cstring
 -
+
+/home/user/langage_avance/Projet_IN505/Cryptage.h
+iostream
+-
+fstream
+-
+Sommet.h
+/home/user/langage_avance/Projet_IN505/Sommet.h
 
 /home/user/langage_avance/Projet_IN505/Fenetre.hh
 QtGui/QApplication
@@ -21,28 +35,36 @@ QtGui/QWidget
 -
 iostream
 -
-ArbreB.hh
-/home/user/langage_avance/Projet_IN505/ArbreB.hh
-Sommet.hh
-/home/user/langage_avance/Projet_IN505/Sommet.hh
+ArbreB.h
+/home/user/langage_avance/Projet_IN505/ArbreB.h
+Sommet.h
+/home/user/langage_avance/Projet_IN505/Sommet.h
 
 /home/user/langage_avance/Projet_IN505/Main.cc
 iostream
 -
+fstream
+-
 QtGui/QApplication
 -
 QtGui/QPainter
 -
 QtGui/QWidget
 -
-ArbreB.hh
-/home/user/langage_avance/Projet_IN505/ArbreB.hh
-Sommet.hh
-/home/user/langage_avance/Projet_IN505/Sommet.hh
+ArbreB.h
+/home/user/langage_avance/Projet_IN505/ArbreB.h
+Sommet.h
+/home/user/langage_avance/Projet_IN505/Sommet.h
+Cryptage.h
+/home/user/langage_avance/Projet_IN505/Cryptage.h
 Fenetre.hh
 /home/user/langage_avance/Projet_IN505/Fenetre.hh
 
-/home/user/langage_avance/Projet_IN505/Sommet.hh
+/home/user/langage_avance/Projet_IN505/Sommet.cc
+Sommet.h
+/home/user/langage_avance/Projet_IN505/Sommet.h
+
+/home/user/langage_avance/Projet_IN505/Sommet.h
 
 /home/user/langage_avance/Projet_IN505/build/main_autogen/mocs_compilation.cpp
 

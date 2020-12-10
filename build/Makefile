@@ -136,6 +136,33 @@ main_autogen/fast:
 	$(MAKE) -f CMakeFiles/main_autogen.dir/build.make CMakeFiles/main_autogen.dir/build
 .PHONY : main_autogen/fast
 
+ArbreB.o: ArbreB.cc.o
+
+.PHONY : ArbreB.o
+
+# target to build an object file
+ArbreB.cc.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ArbreB.cc.o
+.PHONY : ArbreB.cc.o
+
+ArbreB.i: ArbreB.cc.i
+
+.PHONY : ArbreB.i
+
+# target to preprocess a source file
+ArbreB.cc.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ArbreB.cc.i
+.PHONY : ArbreB.cc.i
+
+ArbreB.s: ArbreB.cc.s
+
+.PHONY : ArbreB.s
+
+# target to generate assembly for a file
+ArbreB.cc.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ArbreB.cc.s
+.PHONY : ArbreB.cc.s
+
 Main.o: Main.cc.o
 
 .PHONY : Main.o
@@ -162,6 +189,33 @@ Main.s: Main.cc.s
 Main.cc.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Main.cc.s
 .PHONY : Main.cc.s
+
+Sommet.o: Sommet.cc.o
+
+.PHONY : Sommet.o
+
+# target to build an object file
+Sommet.cc.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Sommet.cc.o
+.PHONY : Sommet.cc.o
+
+Sommet.i: Sommet.cc.i
+
+.PHONY : Sommet.i
+
+# target to preprocess a source file
+Sommet.cc.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Sommet.cc.i
+.PHONY : Sommet.cc.i
+
+Sommet.s: Sommet.cc.s
+
+.PHONY : Sommet.s
+
+# target to generate assembly for a file
+Sommet.cc.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Sommet.cc.s
+.PHONY : Sommet.cc.s
 
 main_autogen/mocs_compilation.o: main_autogen/mocs_compilation.cpp.o
 
@@ -200,9 +254,15 @@ help:
 	@echo "... main"
 	@echo "... edit_cache"
 	@echo "... main_autogen"
+	@echo "... ArbreB.o"
+	@echo "... ArbreB.i"
+	@echo "... ArbreB.s"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"
+	@echo "... Sommet.o"
+	@echo "... Sommet.i"
+	@echo "... Sommet.s"
 	@echo "... main_autogen/mocs_compilation.o"
 	@echo "... main_autogen/mocs_compilation.i"
 	@echo "... main_autogen/mocs_compilation.s"

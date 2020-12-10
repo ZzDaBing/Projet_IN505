@@ -13,9 +13,12 @@ file(GLOB_RECURSE HEADERS
 
 set(SRCS
 	Main.cc
-	ArbreB.hh
-	Sommet.hh
+	ArbreB.h
+	ArbreB.cc
+	Sommet.h
+	Sommet.cc
 	Fenetre.hh
+	Cryptage.h
 )
 
 add_executable(main ${SRCS} ${HEADERS})

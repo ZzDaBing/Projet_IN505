@@ -1,62 +1,54 @@
-#pragma once
-#include "Sommet.hh"
-#include <cstring>
+#include "ArbreB.h"
 
-class ArbreB : public Sommet{
-private:
-	ArbreB* fg;
-	ArbreB* fd;
-public:
-	ArbreB() : Sommet(){
-		this->fg=NULL;
-		this->fd=NULL;
+ArbreB::ArbreB() : Sommet(){
+	this->fg=nullptr;
+	this->fd=nullptr;
+}
+
+ArbreB::ArbreB(char l, int o) : Sommet(l,o){
+	this->fg=nullptr;
+	this->fd=nullptr;
+}
+
+ArbreB::ArbreB(ArbreB fg, ArbreB fd) : Sommet(){
+	this->fg=&fg;
+	this->fd=&fd;
+}
+
+ArbreB::ArbreB(const char * direction ,  ArbreB f) : Sommet(){
+	if (std::strcmp(direction, "droite")==0){
+		this->fd=&f;
+		this->fg=nullptr;
 	}
+	else {
+		this->fg=&f;
+		this->fd=nullptr;
+	}
+}
+
+ArbreB::ArbreB(char l, int o, const char * direction ,  ArbreB f) : Sommet(l,o){
+	if (std::strcmp(direction, "droite")==0){
+		this->fd=&f;
+		this->fg=nullptr;
+	}
+	else {
+		this->fg=&f;
+		this->fd=nullptr;
+	}
+}
 	
-	ArbreB(char l, int o) : Sommet(l,o){
-		this->fg=NULL;
-		this->fd=NULL;
-	}
-
-	ArbreB(ArbreB fg, ArbreB fd) : Sommet(){
-		this->fg=&fg;
-		this->fd=&fd;
-	}
-
-	ArbreB(const char * direction ,  ArbreB f) : Sommet(){
-		if (std::strcmp(direction, "droite")==0){
-			this->fd=&f;
-			this->fg=NULL;
-		}
-		else {
-			this->fg=&f;
-			this->fd=NULL;
-		}
-	}
-
-	ArbreB(char l, int o, const char * direction ,  ArbreB f) : Sommet(l,o){
-		if (std::strcmp(direction, "droite")==0){
-			this->fd=&f;
-			this->fg=NULL;
-		}
-		else {
-			this->fg=&f;
-			this->fd=NULL;
-		}
-	}
+ArbreB::ArbreB(char l, int o, ArbreB fg, ArbreB fd) : Sommet(l,o){
+	this->fg=&fg;
+	this->fd=&fd;
+}
 	
-	ArbreB(char l, int o, ArbreB fg, ArbreB fd) : Sommet(l,o){
-		this->fg=&fg;
-		this->fd=&fd;
-	}
-	
-	~ArbreB(){}
-	
-	ArbreB* getfg(){return this->fg;}
-	ArbreB* getfd(){return this->fd;}
+ArbreB::~ArbreB(){}
 
-	//fonction qui renvoie toute les lettres et occurences par profondeur et si elle se situe a gauche ou a droite
+ArbreB* ArbreB::getfg(){return this->fg;}
+ArbreB* ArbreB::getfd(){return this->fd;}
 
-	int rechAllElem(int prof, char const * nomArbre, int gORd){
+//fonction qui renvoie toute les lettres et occurences par profondeur et si elle se situe a gauche ou a droite
+int ArbreB::rechAllElem(int prof, char const * nomArbre, int gORd){
 
 		if (gORd == -1)
 			std::cout << "Sommet de l'arbre "<<  nomArbre <<  " egale a : '" << this->getLettre() << "' et son occurence a : " << this->getOccurence() << std::endl;
@@ -78,11 +70,11 @@ public:
 		}
 
 		else return 0;
-	}
+}
 
 	
-	//fonction de recherche d'un caractère dans un arbre, elle renvoie un boolean
-	bool rechElem(char l){
+//fonction de recherche d'un caractère dans un arbre, elle renvoie un boolean,
+bool ArbreB::rechElem(char l){
 		if(this->getLettre()==l){
 			std::cout << "Element trouvé: " << l << std::endl;
 			return true;
@@ -96,10 +88,10 @@ public:
 			return fd->rechElem(l);
 		}
 		return false;
-	}
+}
 	
-	//fonction de recherche d'un caractère dans un arbre, elle ne renvoie rien
-	void rechercheElem(char l){
+//fonction de recherche d'un caractère dans un arbre, elle renvoie un rien
+void ArbreB::rechercheElem(char l){
 		if(this->getLettre()==l){
 			std::cout << "Element trouvé: " << l << "son occurence est de: " << this->getOccurence() << std::endl;
 		}
@@ -109,7 +101,4 @@ public:
 		if(fd){
 			fd->rechercheElem(l);
 		}
-	}
-	
-	
-};
+}

@@ -81,9 +81,57 @@ CMakeFiles/main.dir/Main.cc.o.provides: CMakeFiles/main.dir/Main.cc.o.requires
 CMakeFiles/main.dir/Main.cc.o.provides.build: CMakeFiles/main.dir/Main.cc.o
 
 
+CMakeFiles/main.dir/ArbreB.cc.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/ArbreB.cc.o: ../ArbreB.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/langage_avance/Projet_IN505/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/ArbreB.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/ArbreB.cc.o -c /home/user/langage_avance/Projet_IN505/ArbreB.cc
+
+CMakeFiles/main.dir/ArbreB.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/ArbreB.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/langage_avance/Projet_IN505/ArbreB.cc > CMakeFiles/main.dir/ArbreB.cc.i
+
+CMakeFiles/main.dir/ArbreB.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/ArbreB.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/langage_avance/Projet_IN505/ArbreB.cc -o CMakeFiles/main.dir/ArbreB.cc.s
+
+CMakeFiles/main.dir/ArbreB.cc.o.requires:
+
+.PHONY : CMakeFiles/main.dir/ArbreB.cc.o.requires
+
+CMakeFiles/main.dir/ArbreB.cc.o.provides: CMakeFiles/main.dir/ArbreB.cc.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ArbreB.cc.o.provides.build
+.PHONY : CMakeFiles/main.dir/ArbreB.cc.o.provides
+
+CMakeFiles/main.dir/ArbreB.cc.o.provides.build: CMakeFiles/main.dir/ArbreB.cc.o
+
+
+CMakeFiles/main.dir/Sommet.cc.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/Sommet.cc.o: ../Sommet.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/langage_avance/Projet_IN505/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/Sommet.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/Sommet.cc.o -c /home/user/langage_avance/Projet_IN505/Sommet.cc
+
+CMakeFiles/main.dir/Sommet.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Sommet.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/langage_avance/Projet_IN505/Sommet.cc > CMakeFiles/main.dir/Sommet.cc.i
+
+CMakeFiles/main.dir/Sommet.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Sommet.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/langage_avance/Projet_IN505/Sommet.cc -o CMakeFiles/main.dir/Sommet.cc.s
+
+CMakeFiles/main.dir/Sommet.cc.o.requires:
+
+.PHONY : CMakeFiles/main.dir/Sommet.cc.o.requires
+
+CMakeFiles/main.dir/Sommet.cc.o.provides: CMakeFiles/main.dir/Sommet.cc.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/Sommet.cc.o.provides.build
+.PHONY : CMakeFiles/main.dir/Sommet.cc.o.provides
+
+CMakeFiles/main.dir/Sommet.cc.o.provides.build: CMakeFiles/main.dir/Sommet.cc.o
+
+
 CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.o: main_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/langage_avance/Projet_IN505/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/langage_avance/Projet_IN505/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.o -c /home/user/langage_avance/Projet_IN505/build/main_autogen/mocs_compilation.cpp
 
 CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.i: cmake_force
@@ -108,19 +156,23 @@ CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.o.provides.build: CMakeFil
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/Main.cc.o" \
+"CMakeFiles/main.dir/ArbreB.cc.o" \
+"CMakeFiles/main.dir/Sommet.cc.o" \
 "CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
 main: CMakeFiles/main.dir/Main.cc.o
+main: CMakeFiles/main.dir/ArbreB.cc.o
+main: CMakeFiles/main.dir/Sommet.cc.o
 main: CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/lib/x86_64-linux-gnu/libQtCore.so
 main: /usr/lib/x86_64-linux-gnu/libQtGui.so
 main: /usr/lib/x86_64-linux-gnu/libQtCore.so
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/langage_avance/Projet_IN505/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/langage_avance/Projet_IN505/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -129,6 +181,8 @@ CMakeFiles/main.dir/build: main
 .PHONY : CMakeFiles/main.dir/build
 
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/Main.cc.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/ArbreB.cc.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/Sommet.cc.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/main_autogen/mocs_compilation.cpp.o.requires
 
 .PHONY : CMakeFiles/main.dir/requires

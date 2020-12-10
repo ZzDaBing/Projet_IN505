@@ -1,15 +1,17 @@
 #include <iostream>
+#include <fstream>
 
 #include <QtGui/QApplication>
 #include <QtGui/QPainter>
 #include <QtGui/QWidget>
 
-#include "ArbreB.hh"
-#include "Sommet.hh"
+#include "ArbreB.h"
+#include "Sommet.h"
+#include "Cryptage.h"
 #include "Fenetre.hh"
 
 int main(int argc,char** argv){
-	
+	/*
 	const char * d = "droite";
 	const char * g = "gauche";
 
@@ -17,7 +19,7 @@ int main(int argc,char** argv){
 	ArbreB b ; 								// création d'un sommet vide 0,0
 	ArbreB c ('c',4); 						// création d'un sommet seul avec la lettre "c" et l'occurence "4"
 
-	ArbreB ArbreCA (a,c); 					// crearion d'un arbre ArbreB ArbreCA  avec les deux sommet a et c qui aura pour sommet vide
+	ArbreB ArbreCA (a,c); 					// creation d'un arbre ArbreB ArbreCA  avec les deux sommet a et c qui aura pour sommet vide
 	ArbreB ArbreVideCA( 'd',5,g,ArbreCA ); 	// creation d'un arbre avec un  sommet avec la lettre d et une occurence de 5 a partir d'un autre arbre qu'on positionne dans la branche gauche 
 
 	ArbreVideCA.rechAllElem(0,"ArbreVideCA",-1); // recherche de tout les elements contenue dans l'arbre ArbreVideCA
@@ -40,11 +42,15 @@ int main(int argc,char** argv){
 
 	ArbreCA.rechAllElem(0,"ArbreCA",-1); 
 	std::cout << std::endl;
-
+*/
+	//Test Lecture fichier
+	
+	fileToTab("../test.txt");
+	
 	//Partie Qt
 	QApplication app(argc,argv);
-	Fenetre window(&ArbreCA);
-	window.show();
+	//Fenetre window(&ArbreCA);
+	//window.show();
 	
 	return app.exec();
 }

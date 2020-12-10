@@ -5,8 +5,8 @@
 #include <QtGui/QWidget>
 
 #include <iostream>
-#include "ArbreB.hh"
-#include "Sommet.hh"
+#include "ArbreB.h"
+#include "Sommet.h"
 
 class Fenetre : public QWidget{
 private:
