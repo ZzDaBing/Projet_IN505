@@ -16,4 +16,6 @@ public:
 	void setOccurence(int o);
 	
 	int getOccurence();
+	
+	void incremente();
 };

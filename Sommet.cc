@@ -27,3 +27,7 @@ void Sommet::setOccurence(int o){
 int Sommet::getOccurence(){
 	return this->occurence;
 }
+
+void Sommet::incremente(){
+	this->occurence++;
+}

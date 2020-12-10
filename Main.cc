@@ -46,7 +46,6 @@ int main(int argc,char** argv){
 	//Test Lecture fichier
 	
 	fileToTab("../test.txt");
-	
 	//Partie Qt
 	/*QApplication app(argc,argv);
 	Fenetre window(&ArbreCA);
