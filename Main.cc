@@ -48,9 +48,11 @@ int main(int argc,char** argv){
 	fileToTab("../test.txt");
 	
 	//Partie Qt
-	QApplication app(argc,argv);
-	//Fenetre window(&ArbreCA);
-	//window.show();
+	/*QApplication app(argc,argv);
+	Fenetre window(&ArbreCA);
+	window.show();
 	
-	return app.exec();
+	return app.exec();*/
+	
+	return 0;
 }
