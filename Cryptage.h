@@ -11,7 +11,7 @@ void initTabAscii(Sommet* tab){
 	}
 }
 
-Sommet* fileToTab(const char* path){
+void fileToTab(const char* path){
 	char b;
 	std::ifstream f(path);
 	Sommet tabFile[26];
