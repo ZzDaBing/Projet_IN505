@@ -25,6 +25,8 @@ fstream
 -
 Sommet.h
 /home/user/langage_avance/Projet_IN505/Sommet.h
+ArbreB.h
+/home/user/langage_avance/Projet_IN505/ArbreB.h
 
 /home/user/langage_avance/Projet_IN505/Fenetre.hh
 QtGui/QApplication
