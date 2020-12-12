@@ -47,6 +47,9 @@ ArbreB::~ArbreB(){}
 ArbreB* ArbreB::getfg(){return this->fg;}
 ArbreB* ArbreB::getfd(){return this->fd;}
 
+void ArbreB::setfg(ArbreB A){this->fg=&A;}
+void ArbreB::setfd(ArbreB A){this->fd=&A;}
+
 //fonction qui renvoie toute les lettres et occurences par profondeur et si elle se situe a gauche ou a droite
 int ArbreB::rechAllElem(int prof, char const * nomArbre, int gORd){
 

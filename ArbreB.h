@@ -22,6 +22,10 @@ public:
 
 	ArbreB* getfg();
 	ArbreB* getfd();
+	
+	void setfg(ArbreB A);
+	void setfd(ArbreB A);
+	
 	int rechAllElem(int prof, char const * nomArbre, int gORd);
 	bool rechElem(char l);
 	void rechercheElem(char l);
