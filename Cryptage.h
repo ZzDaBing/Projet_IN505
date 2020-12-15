@@ -5,26 +5,23 @@
 #include "Sommet.h"
 #include "ArbreB.h"
 
-std::vector<ArbreB> triVecteur(std::vector<ArbreB> A){
-	ArbreB tmp;
-	for(int i=0; i<A.size();i++){
-		for(int j=0;j<A.size();j++){
-			if(A[i].getOccurence() > A[j].getOccurence()){
-				tmp.setLettre(A[i].getLettre());
-				tmp.setOccurence(A[i].getOccurence());
-				
-				A[i].setLettre(A[j].getLettre());
-				A[i].setOccurence(A[j].getOccurence());
-				
-				A[j].setLettre(tmp.getLettre());
-				A[j].setOccurence(tmp.getOccurence());
-			}
+ArbreB getMin(std::vector<ArbreB>& Vec){	//Prend un vecteur en argument et retourne l'arbre ayant la plus petite occurrence 
+	int min = Vec.back().getOccurence();
+	int indice=0;
+	for(size_t i=1;i<Vec.size();i++){
+		if(min > Vec[i].getOccurence()){
+			min = Vec.back().getOccurence();
+			indice = i;
 		}
 	}
-	return A;
+	ArbreB res;
+	res=Vec[indice];
+	
+	Vec.erase(Vec.begin()+indice);
+	return res;
 }
 
-void initTabAscii(ArbreB* tab){
+void initTabAscii(ArbreB* tab){	//Initialise un tableau d'arbre
 	for(int i=0;i<26;i++){	//Les lettres minuscules ASCII 
 		tab[i].setLettre((char)(i+65));
 		tab[i].setOccurence(0);
@@ -38,10 +35,6 @@ void fileToTab(const char* path){
 	
 	//initialisation tableau
 	initTabAscii(tabFile);
-	
-	for(int i=0;i<26;i++){	//Les lettres minuscules ASCII 
-		std::cout << tabFile[i].getLettre() << ", " << tabFile[i].getOccurence() << std::endl;
-	}
 	
 	//Lecture Fichier
 	while(f.get(b)){
@@ -66,43 +59,21 @@ void fileToTab(const char* path){
 	for(int i=0;i<v.size();i++)
 		std::cout <<v[i].getLettre()<< ", " << v[i].getOccurence() << std::endl;
 	
-	//Tri du tableau
-	v=triVecteur(v);
-	std::cout << std::endl;
-	for(int i=0;i<v.size();i++)	//Affichage
-		std::cout <<v[i].getLettre()<< ", " << v[i].getOccurence() << std::endl;
-	std::cout << std::endl;
-	
 	//Fusion
-	ArbreB tmp1(v.back().getLettre(),v.back().getOccurence());
-	v.pop_back();
-	ArbreB tmp2(v.back().getLettre(),v.back().getOccurence());
-	v.pop_back();
-	ArbreB tmp(tmp1,tmp2);
-	v.push_back(tmp);
-	v.back().setOccurence(tmp1.getOccurence()+tmp2.getOccurence());
 	
-	for(int i=0;i<v.size();i++)	//Affichage
-		std::cout <<v[i].getLettre()<< ", " << v[i].getOccurence() << std::endl;
-	
-	//Construction Arbre Final
 	while(v.size()>1){
-		v=triVecteur(v);
-		tmp1.setLettre(v.back().getLettre());
-		tmp1.setOccurence(v.back().getOccurence());
-		v.pop_back();
-		tmp2.setLettre(v.back().getLettre());
-		tmp2.setOccurence(v.back().getOccurence());
-		v.pop_back();
-		//tmp(tmp1,tmp2);
-		tmp.setfg(tmp1);
-		tmp.setfd(tmp2);
+		ArbreB tmp;
+		tmp.setfg(getMin(v));
+		tmp.setfd(getMin(v));
 		v.push_back(tmp);
-		v.back().setOccurence(tmp1.getOccurence()+tmp2.getOccurence());
+		v.back().setOccurence(v.back().getfg()->getOccurence()+v.back().getfd()->getOccurence());
 	}
 	std::cout << std::endl;
 	
 	for(int i=0;i<v.size();i++)	//Affichage
 		std::cout <<v[i].getLettre()<< ", " << v[i].getOccurence() << std::endl;
 	
+	//Affichage de l'arbre final
+	ArbreB Final = v.front();
+	//Final.rechAllElem(0,"Final",-1);
 };
