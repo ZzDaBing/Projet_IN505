@@ -22,8 +22,8 @@ ArbreB getMin(std::vector<ArbreB>& Vec){	//Prend un vecteur en argument et retou
 }
 
 void initTabAscii(ArbreB* tab){	//Initialise un tableau d'arbre
-	for(int i=0;i<26;i++){	//Les lettres minuscules ASCII 
-		tab[i].setLettre((char)(i+65));
+	for(int i=0;i<94;i++){	//ASCII à partir de l'espace jusqu'au 127e caractere ASCII
+		tab[i].setLettre((char)(i+32));
 		tab[i].setOccurence(0);
 	}
 }
@@ -31,7 +31,7 @@ void initTabAscii(ArbreB* tab){	//Initialise un tableau d'arbre
 void fileToTab(const char* path){
 	char b;
 	std::ifstream f(path);
-	ArbreB tabFile[26];
+	ArbreB tabFile[94];
 	
 	//initialisation tableau
 	initTabAscii(tabFile);
@@ -40,8 +40,8 @@ void fileToTab(const char* path){
 	while(f.get(b)){
 		std::cout << b;
 		//Incrémentation de l'occurence de la lettre dans le tableau
-		for(int i=0;i<26;i++){
-			if(b == tabFile[i].getLettre() || (char)(b-32) == tabFile[i].getLettre()){
+		for(int i=0;i<94;i++){
+			if(b == tabFile[i].getLettre()){
 				tabFile[i].incremente();
 			}
 		}
@@ -49,14 +49,21 @@ void fileToTab(const char* path){
 	std::cout << std::endl;
 	f.close();
 	
+	//Affichage du tableau rempli
+	for(int i=0;i<94;i++)
+		std::cout<< tabFile[i].getLettre() << ", " << tabFile[i].getOccurence() << std::endl;
+	std::cout << std::endl;
+	
 	//Crée un vecteur d'arbres stockant les lettres ayant une occurrence non nulle
 	std::vector<ArbreB> v;
-	for(int i=0;i<26;i++){	
+	for(int i=0;i<94;i++){	
 		if(tabFile[i].getOccurence() != 0){
 			v.push_back(tabFile[i]);
 		}
 	}
-	for(int i=0;i<v.size();i++)
+	
+	std::cout << "Contenu du Vecteur : "<<std::endl;
+	for(int i=0;i<v.size();i++) //Contenu du Vecteur
 		std::cout <<v[i].getLettre()<< ", " << v[i].getOccurence() << std::endl;
 	
 	//Fusion
