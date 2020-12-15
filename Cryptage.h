@@ -28,7 +28,7 @@ void initTabAscii(ArbreB* tab){	//Initialise un tableau d'arbre
 	}
 }
 
-void fileToTab(const char* path){
+void Cryptage(const char* path){
 	char b;
 	std::ifstream f(path);
 	ArbreB tabFile[94];
@@ -67,12 +67,11 @@ void fileToTab(const char* path){
 	for(int i=0;i<v.size();i++)
 		std::cout <<v[i].getLettre()<< ", " << v[i].getOccurence() << std::endl;
 	
-	int taille=0;
-	while(v.size()>1){	//Application de l'algorithme de Huffmann
+	//Application de l'algorithme de Huffmann
+	while(v.size()>1){
 		ArbreB tmp(getMin(v),getMin(v));
 		v.push_back(tmp);
 		v.back().setOccurence(v.back().getfg()->getOccurence()+v.back().getfd()->getOccurence());
-		taille++;
 	}
 	std::cout << std::endl;
 	
@@ -83,12 +82,19 @@ void fileToTab(const char* path){
 	ArbreB Final = v.front();
 	Final.rechAllElem(0,"Final",-1);
 	
-	std::string test = Final.codifierText('r', "");
-	std::cout << "r : " <<  test << std::endl;
-	test = Final.codifierText('A', "");
-	std::cout << "A : " <<  test << std::endl;
-	test = Final.codifierText('c', "");
-	std::cout << "c : " << test << std::endl;
-	test = Final.codifierText('a', "");
-	std::cout << "a : " << test << std::endl;
+	//Ecriture du texte codifié dans le fichier TexteCodifie.txt
+	std::ofstream outFile("../TexteCodifie.txt",std::ofstream::out);
+	f.open(path, std::fstream::in);
+	while(f.get(b)){
+		std::string codeLettre = Final.codifierText(b,"");
+		if(codeLettre == ""){	//cas où une lettre n'est pas reconnue
+			outFile << "?" << " ";
+		}		
+		else   //cas où la lettre est reconnue
+			outFile << codeLettre << " ";
+	}
+	outFile << std::endl;
+	
+	f.close();
+	outFile.close();
 };

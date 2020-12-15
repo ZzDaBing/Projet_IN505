@@ -1,5 +1,4 @@
 #include "ArbreB.h"
-#include <string>
 
 ArbreB::ArbreB() : Sommet(){
 	this->fg=nullptr;
