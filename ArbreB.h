@@ -14,17 +14,17 @@ public:
 
 	ArbreB();
 	ArbreB(char l, int o);
-	ArbreB(ArbreB fg, ArbreB fd);
-	ArbreB(const char * direction ,  ArbreB f);
-	ArbreB(char l, int o, const char * direction ,  ArbreB f);
-	ArbreB(char l, int o, ArbreB fg, ArbreB fd);
+	ArbreB(const ArbreB& fg, const ArbreB& fd);
+	ArbreB(const char * direction ,  const ArbreB& f);
+	ArbreB(char l, int o, const char * direction ,  const ArbreB& f);
+	ArbreB(char l, int o, const ArbreB& fg, const ArbreB& fd);
 	~ArbreB();
 
 	ArbreB* getfg();
 	ArbreB* getfd();
 	
-	void setfg(ArbreB A);
-	void setfd(ArbreB A);
+	void setfg(const ArbreB& A);
+	void setfd(const ArbreB& A);
 	
 	int rechAllElem(int prof, char const * nomArbre, int gORd);
 	bool rechElem(char l);

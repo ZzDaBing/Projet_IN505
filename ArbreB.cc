@@ -10,49 +10,54 @@ ArbreB::ArbreB(char l, int o) : Sommet(l,o){
 	this->fd=nullptr;
 }
 
-ArbreB::ArbreB(ArbreB fg, ArbreB fd) : Sommet(){
-	this->fg=&fg;
-	this->fd=&fd;
+ArbreB::ArbreB(const ArbreB& fg, const ArbreB& fd) : Sommet(){
+	this->fg=new ArbreB(fg);
+	this->fd=new ArbreB(fd);
 }
 
-ArbreB::ArbreB(const char * direction ,  ArbreB f) : Sommet(){
+ArbreB::ArbreB(const char * direction ,  const ArbreB& f) : Sommet(){
 	if (std::strcmp(direction, "droite")==0){
-		this->fd=&f;
+		this->fd=new ArbreB(f);
 		this->fg=nullptr;
 	}
 	else {
-		this->fg=&f;
+		this->fg=new ArbreB(f);
 		this->fd=nullptr;
 	}
 }
 
-ArbreB::ArbreB(char l, int o, const char * direction ,  ArbreB f) : Sommet(l,o){
+ArbreB::ArbreB(char l, int o, const char * direction ,  const ArbreB& f) : Sommet(l,o){
 	if (std::strcmp(direction, "droite")==0){
-		this->fd=&f;
+		this->fd=new ArbreB(f);
 		this->fg=nullptr;
 	}
 	else {
-		this->fg=&f;
+		this->fg=new ArbreB(f);
 		this->fd=nullptr;
 	}
 }
 	
-ArbreB::ArbreB(char l, int o, ArbreB fg, ArbreB fd) : Sommet(l,o){
-	this->fg=&fg;
-	this->fd=&fd;
+ArbreB::ArbreB(char l, int o, const ArbreB& fg, const ArbreB& fd) : Sommet(l,o){
+	this->fg=new ArbreB(fg);
+	this->fd=new ArbreB(fd);
 }
 	
-ArbreB::~ArbreB(){}
+ArbreB::~ArbreB(){
+	if(fg)
+		fg=nullptr;
+	if(fd)
+		fd=nullptr;
+}
 
 ArbreB* ArbreB::getfg(){return this->fg;}
 ArbreB* ArbreB::getfd(){return this->fd;}
 
-void ArbreB::setfg(ArbreB A){this->fg=&A;}
-void ArbreB::setfd(ArbreB A){this->fd=&A;}
+void ArbreB::setfg(const ArbreB& A){fg=new ArbreB(A);}
+void ArbreB::setfd(const ArbreB& A){fd=new ArbreB(A);}
 
 //fonction qui renvoie toute les lettres et occurences par profondeur et si elle se situe a gauche ou a droite
 int ArbreB::rechAllElem(int prof, char const * nomArbre, int gORd){
-
+	
 		if (gORd == -1)
 			std::cout << "Sommet de l'arbre "<<  nomArbre <<  " egale a : '" << this->getLettre() << "' et son occurence a : " << this->getOccurence() << std::endl;
 
@@ -95,13 +100,15 @@ bool ArbreB::rechElem(char l){
 	
 //fonction de recherche d'un caractère dans un arbre, elle renvoie un rien
 void ArbreB::rechercheElem(char l){
-		if(this->getLettre()==l){
+		if(this->getLettre()==l ){
 			std::cout << "Element trouvé: " << l << "son occurence est de: " << this->getOccurence() << std::endl;
 		}
-		if(fg){
-			fg->rechercheElem(l);
-		}
-		if(fd){
-			fd->rechercheElem(l);
+		else{
+			if(fg){
+				fg->rechercheElem(l);
+			}
+			if(fd){
+				fd->rechercheElem(l);
+			}
 		}
 }

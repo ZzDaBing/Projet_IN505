@@ -22,7 +22,7 @@ ArbreB getMin(std::vector<ArbreB>& Vec){	//Prend un vecteur en argument et retou
 }
 
 void initTabAscii(ArbreB* tab){	//Initialise un tableau d'arbre
-	for(int i=0;i<94;i++){	//ASCII à partir de l'espace jusqu'au 127e caractere ASCII
+	for(int i=0;i<94;i++){	//ASCII à partir du caractere espace jusqu'au 127e caractere ASCII
 		tab[i].setLettre((char)(i+32));
 		tab[i].setOccurence(0);
 	}
@@ -62,25 +62,24 @@ void fileToTab(const char* path){
 		}
 	}
 	
+	//Affichage du contenu du vecteur
 	std::cout << "Contenu du Vecteur : "<<std::endl;
-	for(int i=0;i<v.size();i++) //Contenu du Vecteur
+	for(int i=0;i<v.size();i++)
 		std::cout <<v[i].getLettre()<< ", " << v[i].getOccurence() << std::endl;
 	
-	//Fusion
-	
-	while(v.size()>1){
-		ArbreB tmp;
-		tmp.setfg(getMin(v));
-		tmp.setfd(getMin(v));
+	int taille=0;
+	while(v.size()>1){	//Application de l'algorithme de Huffmann
+		ArbreB tmp(getMin(v),getMin(v));
 		v.push_back(tmp);
 		v.back().setOccurence(v.back().getfg()->getOccurence()+v.back().getfd()->getOccurence());
+		taille++;
 	}
 	std::cout << std::endl;
 	
-	for(int i=0;i<v.size();i++)	//Affichage
+	for(int i=0;i<v.size();i++)	//Affichage final du vecteur
 		std::cout <<v[i].getLettre()<< ", " << v[i].getOccurence() << std::endl;
 	
 	//Affichage de l'arbre final
 	ArbreB Final = v.front();
-	//Final.rechAllElem(0,"Final",-1);
+	Final.rechAllElem(0,"Final",-1);
 };
