@@ -26,6 +26,8 @@ public:
 	void setfg(const ArbreB& A);
 	void setfd(const ArbreB& A);
 	
+	std::string codifierText(char l, std::string res);
+	
 	int rechAllElem(int prof, char const * nomArbre, int gORd);
 	bool rechElem(char l);
 	void rechercheElem(char l);

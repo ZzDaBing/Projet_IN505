@@ -82,4 +82,13 @@ void fileToTab(const char* path){
 	//Affichage de l'arbre final
 	ArbreB Final = v.front();
 	Final.rechAllElem(0,"Final",-1);
+	
+	std::string test = Final.codifierText('r', "");
+	std::cout << "r : " <<  test << std::endl;
+	test = Final.codifierText('A', "");
+	std::cout << "A : " <<  test << std::endl;
+	test = Final.codifierText('c', "");
+	std::cout << "c : " << test << std::endl;
+	test = Final.codifierText('a', "");
+	std::cout << "a : " << test << std::endl;
 };

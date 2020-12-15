@@ -1,4 +1,5 @@
 #include "ArbreB.h"
+#include <string>
 
 ArbreB::ArbreB() : Sommet(){
 	this->fg=nullptr;
@@ -84,7 +85,6 @@ int ArbreB::rechAllElem(int prof, char const * nomArbre, int gORd){
 //fonction de recherche d'un caractère dans un arbre, elle renvoie un boolean,
 bool ArbreB::rechElem(char l){
 		if(this->getLettre()==l){
-			std::cout << "Element trouvé: " << l << std::endl;
 			return true;
 		}
 		if(fg and fd)
@@ -111,4 +111,17 @@ void ArbreB::rechercheElem(char l){
 				fd->rechercheElem(l);
 			}
 		}
+}
+
+std::string ArbreB::codifierText(char l, std::string res){
+	if(this->getLettre()==l)
+		return res;
+	
+	if(fg->rechElem(l))
+		return fg->codifierText(l, res + '1');
+		
+	if(fd->rechElem(l))
+		return fd->codifierText(l, res + '0');
+		
+	return res;
 }
