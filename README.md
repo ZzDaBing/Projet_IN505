@@ -1,15 +1,9 @@
-Dans cette partie 2 nous avons créé le fichier Cryptage.h qui permet, dans un premier temps, de lire
-un fichier texte en entrée et de trouver toutes les occurrences des lettres contenues dans ce
-fichier texte pour les implémenter dans un tableau.
-Puis dans un second temps, on utilise ensuite ce tableau pour trier les occurrences  et utilisons 
-un vecteur pour construire notre arbre.
-Nous avons rencontré quelques problèmes lors de la construction de notre arbre et avons donc
-fait quelques ajustements de la classe ArbreB afin de régler ces problèmes.
-Par la suite, dans la classe ArbreB nous avons créé une fonction utilisant l'arbre obtenu pour
-codifier le texte, renvoyant un string.
-Enfin, nous créons un fichier en écriture et nous lisons caractère par caractère
-le premier fichier passé en paramètre , et affichons son code en parallèle dans le fichier
-créé ouvert en écriture.
+Dans cette partie 3 nous avons créé le fichier Decryptage.h qui permet, dans un premier temps, de vérifier si le texte passé
+en argument peut être encodé par l'arbre que nous créons dans la partie 2.
+Puis dans un second temps, si le texte est reconnu par l'arbre, nous utilisons une fonction de décryptage qui va
+pour chaque chaine de 0 et de 1 dans le fichier que nous ouvrons en lecture, parcourir l'arbre et retrouver le caractère correspondant,
+et ainsi l'afficher dans le fichier TexteDecodifie.txt.
+
 Les tests de notre code sont réalisés dans la classe Main.
 
 La partie interface graphique n'est pas implémentée.

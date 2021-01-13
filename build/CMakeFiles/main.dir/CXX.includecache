@@ -28,6 +28,20 @@ Sommet.h
 ArbreB.h
 /home/user/langage_avance/Projet_IN505/ArbreB.h
 
+/home/user/langage_avance/Projet_IN505/Decryptage.h
+iostream
+-
+fstream
+-
+string
+-
+Sommet.h
+/home/user/langage_avance/Projet_IN505/Sommet.h
+ArbreB.h
+/home/user/langage_avance/Projet_IN505/ArbreB.h
+Cryptage.h
+/home/user/langage_avance/Projet_IN505/Cryptage.h
+
 /home/user/langage_avance/Projet_IN505/Fenetre.hh
 QtGui/QApplication
 -
@@ -59,6 +73,8 @@ Sommet.h
 /home/user/langage_avance/Projet_IN505/Sommet.h
 Cryptage.h
 /home/user/langage_avance/Projet_IN505/Cryptage.h
+Decryptage.h
+/home/user/langage_avance/Projet_IN505/Decryptage.h
 Fenetre.hh
 /home/user/langage_avance/Projet_IN505/Fenetre.hh
 

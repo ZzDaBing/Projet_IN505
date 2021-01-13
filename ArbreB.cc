@@ -61,7 +61,7 @@ int ArbreB::rechAllElem(int prof, char const * nomArbre, int gORd){
 		if (gORd == -1)
 			std::cout << "Sommet de l'arbre "<<  nomArbre <<  " egale a : '" << this->getLettre() << "' et son occurence a : " << this->getOccurence() << std::endl;
 
-		else if (gORd)
+		else if (gORd == 0)
 			std::cout << "Element trouvé a la profondeur "<< prof << " : '" << this->getLettre() << "' et son occurence a : " << this->getOccurence() << " dans l'abre " << nomArbre << " a droite" << std::endl;
 
 		else 
@@ -117,10 +117,10 @@ std::string ArbreB::codifierText(char l, std::string res){
 		return res;
 	
 	if(fg->rechElem(l))
-		return fg->codifierText(l, res + '1');
+		return fg->codifierText(l, res + '0');
 		
 	if(fd->rechElem(l))
-		return fd->codifierText(l, res + '0');
+		return fd->codifierText(l, res + '1');
 		
 	return res;
 }

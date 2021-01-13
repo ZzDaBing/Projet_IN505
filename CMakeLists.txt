@@ -19,6 +19,7 @@ set(SRCS
 	Sommet.cc
 	Fenetre.hh
 	Cryptage.h
+	Decryptage.h
 )
 
 add_executable(main ${SRCS} ${HEADERS})

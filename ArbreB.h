@@ -31,5 +31,4 @@ public:
 	int rechAllElem(int prof, char const * nomArbre, int gORd);
 	bool rechElem(char l);
 	void rechercheElem(char l);
-	//deleteArbre();
 };
